@@ -25,7 +25,7 @@ st.write("Ask me anything about the lecture slides we ingested!")
 # Load the Database and LLM (We use caching so it doesn't reload on every single click)
 @st.cache_resource
 def load_rag_pipeline():
-    # A. Connect to the Chroma database we just built
+    # Connect to the Chroma database we just built
     embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     db = Chroma(persist_directory="chroma_db", embedding_function=embedding_model)
     
